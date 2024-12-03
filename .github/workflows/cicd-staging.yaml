@@ -5,6 +5,13 @@ on:
     branches:
       - staging  # Trigger saat push ke branch main
 
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'staging'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest  # Runner GitHub Actions
